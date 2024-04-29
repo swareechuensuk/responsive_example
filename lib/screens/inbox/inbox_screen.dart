@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
-import 'package:responsive_example/components/inbox_item.dart';
+import 'package:responsive_example/screens/inbox/inbox_item.dart';
 import 'package:responsive_example/types/inbox_message.dart';
 
 class InboxScreen extends StatefulWidget {
@@ -17,7 +16,8 @@ class _InboxScreenState extends State<InboxScreen> {
         subtitle: 'Weekly sync at 10:00 AM',
         time: '10m'),
     InboxMessage(
-        title: 'Comprehensive Annual Review Meeting and Strategic Planning for Upcoming Fiscal Year Initiatives',
+        title:
+            'Comprehensive Annual Review Meeting and Strategic Planning for Upcoming Fiscal Year Initiatives',
         subtitle: 'Final review due today',
         time: '1h'),
     InboxMessage(
@@ -42,14 +42,14 @@ class _InboxScreenState extends State<InboxScreen> {
         actions: [IconButton(onPressed: () {}, icon: const Icon(Icons.inbox))],
       ),
       body: Container(
-        padding: EdgeInsets.all(8),
+        padding: const EdgeInsets.only(left: 8, right: 8),
         child: ListView(
           children: messages.asMap().entries.map((entry) {
             int idx = entry.key;
             InboxMessage message = entry.value;
             return Padding(
               padding:
-                  EdgeInsets.only(bottom: idx == messages.length - 1 ? 0 : 8.0),
+                  EdgeInsets.only(top: idx == messages.length - 1 ? 0 : 8.0),
               child: InboxItem(
                 message: message,
               ),

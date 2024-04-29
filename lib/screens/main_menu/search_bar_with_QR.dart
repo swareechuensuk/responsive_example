@@ -1,71 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:responsive_example/style_utils/card_style.dart';
 
-class MainMenuScreen extends StatelessWidget {
-  const MainMenuScreen({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('Main Menu'),
-      ),
-      body: Container(
-        padding: const EdgeInsets.all(16),
-        child: const Column(
-          children: [
-            SearchBar(),
-            SizedBox(
-              height: 8,
-            ),
-            MainMenuRow(),
-          ],
-        ),
-      ),
-    );
-  }
-}
-
-class MainMenuRow extends StatelessWidget {
-  const MainMenuRow({
+class SearchBarWithQR extends StatelessWidget {
+  const SearchBarWithQR({
     super.key,
   });
 
-  @override
-  Widget build(BuildContext context) {
-    return Row(
-      children: [
-        Expanded(
-          child: Container(
-            padding: const EdgeInsets.all(16),
-            decoration: cardStyle(),
-            child: const Column(
-              children: [Icon(Icons.face), Text('Menu1')],
-            ),
-          ),
-        ),
-        const SizedBox(
-          width: 8,
-        ),
-        Expanded(
-          child: Container(
-            padding: const EdgeInsets.all(16),
-            decoration: cardStyle(),
-            child: const Column(
-              children: [Icon(Icons.face_2), Text('Menu1')],
-            ),
-          ),
-        ),
-      ],
-    );
-  }
-}
-
-class SearchBar extends StatelessWidget {
-  const SearchBar({
-    super.key,
-  });
-
+  // TOSHOW: try to remove 1. AspectRatio 2. IntrinsicHeight and see the difference
+  // TOSHOW: try to add longer text instead of 'Search' and see what happends
   @override
   Widget build(BuildContext context) {
     return IntrinsicHeight(

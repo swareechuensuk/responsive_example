@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:responsive_example/screens/inbox_screen.dart';
-import 'package:responsive_example/screens/main_menu_screen.dart';
+import 'package:responsive_example/screens/horizontal_scroll/horizontal_scroll_screen.dart';
+import 'package:responsive_example/screens/inbox/inbox_screen.dart';
+import 'package:responsive_example/screens/layouting1/layouting1_screen.dart';
+import 'package:responsive_example/screens/layouting2/layouting2_screen.dart';
+import 'package:responsive_example/screens/layouting3/layouting3_screen.dart';
+import 'package:responsive_example/screens/main_menu/main_menu_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -74,7 +78,64 @@ class _MyHomePageState extends State<MyHomePage> {
                         MaterialPageRoute(
                             builder: (context) => const MainMenuScreen()));
                   },
-                  child: const Text('Main Menu Screen Example'))
+                  child: const Text('Main Menu Screen Example')),
+              TextButton(
+                  style: ButtonStyle(
+                    backgroundColor:
+                        MaterialStateProperty.all<Color>(Colors.green),
+                    foregroundColor:
+                        MaterialStateProperty.all<Color>(Colors.white),
+                  ),
+                  onPressed: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) =>
+                                const HorizontalScrollScreen()));
+                  },
+                  child: const Text('Horizontal Scroll Screen Example')),
+              TextButton(
+                  style: ButtonStyle(
+                    backgroundColor:
+                        MaterialStateProperty.all<Color>(Colors.green),
+                    foregroundColor:
+                        MaterialStateProperty.all<Color>(Colors.white),
+                  ),
+                  onPressed: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => Layouting1Screen()));
+                  },
+                  child: const Text('Layouting 1 Screen Example')),
+              TextButton(
+                  style: ButtonStyle(
+                    backgroundColor:
+                        MaterialStateProperty.all<Color>(Colors.green),
+                    foregroundColor:
+                        MaterialStateProperty.all<Color>(Colors.white),
+                  ),
+                  onPressed: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const Layouting2Screen()));
+                  },
+                  child: const Text('Layouting 2 Screen Example')),
+              TextButton(
+                  style: ButtonStyle(
+                    backgroundColor:
+                        MaterialStateProperty.all<Color>(Colors.green),
+                    foregroundColor:
+                        MaterialStateProperty.all<Color>(Colors.white),
+                  ),
+                  onPressed: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const Layouting3Screen()));
+                  },
+                  child: const Text('Layouting 3 Screen Example')),
             ],
           ),
         ),
