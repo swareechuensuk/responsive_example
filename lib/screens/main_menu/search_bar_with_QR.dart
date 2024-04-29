@@ -7,7 +7,7 @@ class SearchBarWithQR extends StatelessWidget {
   });
 
   // TOSHOW: try to remove 1. AspectRatio 2. IntrinsicHeight and see the difference
-  // TOSHOW: try to add longer text instead of 'Search' and see what happends
+  // TOSHOW: try to add longer text instead of 'Search' and see what happens
   @override
   Widget build(BuildContext context) {
     return IntrinsicHeight(
@@ -41,9 +41,9 @@ class SearchBarWithQR extends StatelessWidget {
             aspectRatio: 1,
             child: Container(
               decoration: cardStyle(),
-              child: const Icon(
-                Icons.qr_code_scanner,
-              ),
+              // child: const Icon(
+              //   Icons.qr_code_scanner,
+              // ),
             ),
           )
         ],

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:responsive_example/style_utils/card_style.dart';
 import 'package:responsive_example/types/inbox_message.dart';
 
@@ -17,6 +18,7 @@ class InboxItem extends StatelessWidget {
         padding: const EdgeInsets.all(16),
         child: Row(
           crossAxisAlignment: CrossAxisAlignment.start,
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Container(
               padding: const EdgeInsets.all(10),
@@ -30,6 +32,7 @@ class InboxItem extends StatelessWidget {
                 size: 16,
               ),
             ),
+            // TOSHOW: Try to remove expanded and see what happens
             Expanded(
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -37,11 +40,14 @@ class InboxItem extends StatelessWidget {
                   Text(
                     message.title,
                     style: const TextStyle(fontWeight: FontWeight.bold),
+                    maxLines: 2,
+                    overflow: TextOverflow.ellipsis,
                   ),
                   Text(message.subtitle),
                 ],
               ),
             ),
+            const SizedBox(width: 16),
             Text(message.time),
           ],
         ),

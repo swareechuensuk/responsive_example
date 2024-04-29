@@ -45,11 +45,9 @@ class _InboxScreenState extends State<InboxScreen> {
         padding: const EdgeInsets.only(left: 8, right: 8),
         child: ListView(
           children: messages.asMap().entries.map((entry) {
-            int idx = entry.key;
             InboxMessage message = entry.value;
             return Padding(
-              padding:
-                  EdgeInsets.only(top: idx == messages.length - 1 ? 0 : 8.0),
+              padding: const EdgeInsets.only(top: 8.0),
               child: InboxItem(
                 message: message,
               ),

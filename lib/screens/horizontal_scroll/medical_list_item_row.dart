@@ -3,10 +3,10 @@ import 'package:flutter/widgets.dart';
 import 'package:responsive_example/style_utils/card_style.dart';
 import 'package:responsive_example/types/drug_item.dart';
 
-class MedicalListItem extends StatelessWidget {
+class MedicalListItemRow extends StatelessWidget {
   final DrugItem drugItem;
 
-  const MedicalListItem({
+  const MedicalListItemRow({
     super.key,
     required this.drugItem,
   });
@@ -46,9 +46,9 @@ class MedicalListItem extends StatelessWidget {
                 ConstrainedBox(
                   constraints: const BoxConstraints(minHeight: 40),
                   child: Text(
-                    overflow: TextOverflow.ellipsis,
+                    // overflow: TextOverflow.ellipsis,
                     drugItem.description,
-                    maxLines: 2,
+                    // maxLines: 2,
                   ),
                 ),
                 const SizedBox(

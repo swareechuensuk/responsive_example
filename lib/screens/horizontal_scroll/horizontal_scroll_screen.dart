@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:responsive_example/screens/horizontal_scroll/medical_list_item.dart';
+import 'package:responsive_example/screens/horizontal_scroll/medical_list_item_listview.dart';
+import 'package:responsive_example/screens/horizontal_scroll/medical_list_item_row.dart';
 import 'package:responsive_example/types/drug_item.dart';
 
 class HorizontalScrollScreen extends StatelessWidget {
@@ -32,7 +33,8 @@ class HorizontalScrollScreen extends StatelessWidget {
                 ],
               ),
             ),
-            const Text('Using IntrinsicHeight and Row'),
+            const Text(
+                'Using IntrinsicHeight and Row\n no need to fixed height\nnot ideal if have too many items'),
             IntrinsicHeight(
               child: SingleChildScrollView(
                 scrollDirection: Axis.horizontal,
@@ -45,7 +47,7 @@ class HorizontalScrollScreen extends StatelessWidget {
                               const SizedBox(
                                 width: 16,
                               ),
-                              MedicalListItem(drugItem: d),
+                              MedicalListItemRow(drugItem: d),
                             ],
                           ),
                         ))
@@ -53,7 +55,8 @@ class HorizontalScrollScreen extends StatelessWidget {
                 ),
               ),
             ),
-            const Text('ListView.builder'),
+            const Text(
+                'ListView.builder\nhave to fixed height\nready for many items'),
             SizedBox(
               height: 310,
               child: ListView.builder(
@@ -67,7 +70,7 @@ class HorizontalScrollScreen extends StatelessWidget {
                         bottom: 16,
                         left: index == 0 ? 16 : 0,
                         right: 16),
-                    child: MedicalListItem(drugItem: drugItem),
+                    child: MedicalListItemListView(drugItem: drugItem),
                   );
                 },
               ),
@@ -91,7 +94,7 @@ final DrugItem drugItem2 = DrugItem(
   price: 75.50,
   sold: 59,
   description:
-      'Generic Pain Relievers (Ibuprofen) Generic Pain Relievers (Ibuprofen) Generic Pain Relievers (Ibuprofen) Generic Pain Relievers (Ibuprofen)',
+      'Generic Pain Relievers (Ibuprofen) Generic Pain Relievers (Ibuprofen) Generic Pain Relievers (Ibuprofen)',
   imagePath: 'assets/drug.jpeg',
   dosageInfo: '200 mg, 100 tablets',
 );
